@@ -1,0 +1,9 @@
+<div class="box-component" (click)="cardClick()">
+  <div class="flag"><img [src]="userData.flag" /></div>
+  <div class="name">{{ userData.name }}</div>
+  <div class="pop"><strong>Population:</strong>&nbsp;{{ userData.population }}</div>
+  <div class="reli">
+    <strong>Region:</strong>&nbsp;{{ userData.region }}
+  </div>
+  <div class="cap"><strong>Capital:</strong>&nbsp;{{ userData.capital }}</div>
+</div>

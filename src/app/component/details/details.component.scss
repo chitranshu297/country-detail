@@ -1,0 +1,86 @@
+.country-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  .back-button {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+
+    span {
+      font-size: 16px;
+    }
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+
+  .country-detail-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .country-flag {
+      width: 300px;
+      height: auto;
+      margin-right: 50px;
+      border: 1px solid #ccc;
+    }
+
+    .country-details {
+      flex: 1;
+
+      h2 {
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      .country-info {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        p {
+          margin-bottom: 10px;
+        }
+
+        .info-left,
+        .info-right {
+          flex: 1;
+        }
+      }
+
+      .border-countries {
+        display: flex;
+        align-items: center;
+
+        .border-country {
+          margin-right: 10px;
+          padding: 5px 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          background-color: #f9f9f9;
+        }
+        .border-country:first-child {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 667px) {
+  .country-detail-content {
+    flex-direction: column !important;
+  }
+}
+@media only screen and (min-width: 668px) and (max-width: 992px) {
+  .country-detail-content {
+    flex-direction: column !important;
+  }
+}

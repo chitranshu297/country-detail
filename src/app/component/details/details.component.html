@@ -1,0 +1,64 @@
+<div class="country-detail-container">
+  <button class="back-button" (click)="goBack()">
+    <span>&larr; Back</span>
+  </button>
+
+  <div class="country-detail-content">
+    <img
+      *ngIf="countryData?.flag"
+      [src]="countryData?.flag"
+      alt="{{ countryData?.name }} flag"
+      class="country-flag"
+    />
+
+    <div class="country-details">
+      <h2 *ngIf="countryData?.name">{{ countryData?.name }}</h2>
+      <div class="country-info">
+        <div class="info-left">
+          <p *ngIf="countryData?.nativeName">
+            <strong>Native Name:&nbsp;</strong> {{ countryData?.nativeName }}
+          </p>
+          <p *ngIf="countryData?.population">
+            <strong>Population:&nbsp;</strong>
+            {{ countryData?.population | number }}
+          </p>
+          <p *ngIf="countryData?.region">
+            <strong>Region:&nbsp;</strong> {{ countryData?.region }}
+          </p>
+          <p *ngIf="countryData?.subregion">
+            <strong>Sub Region:&nbsp;</strong> {{ countryData?.subregion }}
+          </p>
+          <p *ngIf="countryData?.capital">
+            <strong>Capital:&nbsp;</strong> {{ countryData?.capital }}
+          </p>
+        </div>
+        <div class="info-right">
+          <p *ngIf="countryData?.topLevelDomain">
+            <strong>Top Level Domain:&nbsp;</strong>
+            {{ countryData?.topLevelDomain }}
+          </p>
+          <p *ngIf="countryData?.currencies?.length">
+            <strong>Currencies:&nbsp;</strong>
+            {{ countryData?.currencies[0]?.name }}
+          </p>
+          <p *ngIf="countryData?.languages?.length">
+            <strong>Languages:&nbsp;</strong>
+            <span *ngFor="let lang of countryData?.languages; let i = index">
+              {{ lang.name }}
+              <span *ngIf="i != countryData?.languages?.length - 1">
+                ,&nbsp;
+              </span>
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <div class="border-countries" *ngIf="countryData?.borders?.length">
+        <strong>Border Countries:&nbsp;</strong>
+        <ng-container *ngFor="let border of countryData?.borders">
+          <span class="border-country">{{ border }}</span>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
